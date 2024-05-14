@@ -25,15 +25,14 @@ export const MyComposition: React.FC<z.infer<typeof myCompSchema>> = ({
 		<AbsoluteFill className='bg-black' style={{ fontFamily }}>
 			<AbsoluteFill>
 			  <Video style={{
-					opacity,
 					filter: 'brightness(30%)'
 				}} src={staticFile("video.mp4")} />
-				<Audio startFrom={455} src={staticFile("audio.webm")} />
+				{/* <Audio startFrom={455} src={staticFile("audio.webm")} /> */}
 			</AbsoluteFill>
 			<AbsoluteFill className='items-center justify-center'>
-				<div style={{ opacity: contentOpacity }} className="m-10" />
+				<div className="m-10" />
 					{/* <Logo logoColor={propThree} /> */}
-					{ data && (<Notification data={data} />)}
+					{/* { data && (<Notification data={data} />)} */}
 					<div className="m-3" />
 					<Tweet data={data} />
 					{/* <Title titleT ext={propOne} titleColor={propTwo} /> */}

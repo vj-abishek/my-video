@@ -3,13 +3,13 @@ import { Img, Video, interpolate, random, useCurrentFrame } from "remotion"
 
 export const Tweet = ({ data }) => {
   const frame = useCurrentFrame();
-  const opacity = interpolate(frame, [20, 40], [0, 1], {
+  const opacity = interpolate(frame, [10, 15], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
 
   const getSrc = (urls: { src: string }[]) => {
-    const sizes = ['1280x', '720x', '480x', 'x720', 'x480', 'x360'];
+    const sizes = ['1280x', '720x', '480x', 'x720', 'x480', 'x360','x850'];
 
     for (const size of sizes) {
       const url = urls.find((d) => d.src.includes(size));
@@ -20,7 +20,7 @@ export const Tweet = ({ data }) => {
   }
 
   return (
-    <div style={{ opacity }} className="w-[92%] m-9 bg-white border-[#eff3f4] p-10 rounded-[40px]">
+    <div className="w-[87%] m-9 bg-white border-[#eff3f4] p-10 rounded-[40px]">
       <div className="flex flex-row items-center justify-between">
         <div className="flex flex-row items-center">
           <div className="shrink-0">
@@ -45,13 +45,14 @@ export const Tweet = ({ data }) => {
           <Video
             loop
             src={getSrc(data.video)}
-            className="rounded-3xl aspect-video w-full border-[#eff3f4]"
-            volume={0}
+            className="rounded-3xl aspect-auto bg-black w-full border-[#eff3f4]"
+            volume={100}
+            startFrom={400}
           />
         </div>
       ) : (
         data.images.length ? (
-          <Img className="rounded-3xl aspect-video object-cover w-full border-[#eff3f4]" src={data.images[0]} />
+          <Img className="rounded-3xl aspect-auto bg-slate-300 object-cover w-full border-[#eff3f4]" src={data.images[0]} />
         ) : null
       )}
 
