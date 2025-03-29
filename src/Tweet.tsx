@@ -9,7 +9,7 @@ export const Tweet = ({ data }) => {
   });
 
   const getSrc = (urls: { src: string }[]) => {
-    const sizes = ['1280x', '720x', '480x', 'x720', 'x480', 'x360','x850'];
+    const sizes = ['1280x', '720x', '480x', 'x720', 'x480', 'x360','x850', '540x'];
 
     for (const size of sizes) {
       const url = urls.find((d) => d.src.includes(size));
@@ -17,6 +17,8 @@ export const Tweet = ({ data }) => {
         return url.src;
       }
     }
+    
+    return urls[urls.length - 1].src;
   }
 
   return (
@@ -45,9 +47,9 @@ export const Tweet = ({ data }) => {
           <Video
             loop
             src={getSrc(data.video)}
+            // StartFrom={3600}
             className="rounded-3xl aspect-auto bg-black w-full border-[#eff3f4]"
             volume={100}
-            startFrom={400}
           />
         </div>
       ) : (

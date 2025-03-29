@@ -4,14 +4,13 @@ import './style.css';
 
 export const RemotionRoot: React.FC = () => {
   const data = getInputProps();
-	console.log(data)
 
 	return data.tweet ? (
 		<>
 			<Composition
 				id="YTShorts"
 				component={MyComposition}
-				durationInFrames={2070}
+				durationInFrames={240}
 				fps={30}
 				width={1080}
 				height={1920}
