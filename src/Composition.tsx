@@ -27,7 +27,8 @@ export const MyComposition: React.FC<z.infer<typeof myCompSchema>> = ({
 			  <Video style={{
 					filter: 'brightness(30%)'
 				}} src={staticFile("video.mp4")} />
-				<Audio startFrom={455} src={staticFile("audio.webm")} volume={50} />
+				<Audio src={staticFile("audio.mp3")} />
+				{/* <Audio startFrom={455} src={staticFile("audio.mp3")} volume={70} /> */}
 				 {/* <Audio startFrom={270} src={staticFile("2.webm")} volume={50} /> */}
 			</AbsoluteFill>
 			<AbsoluteFill className='items-center justify-center'>
