@@ -47,9 +47,9 @@ export const Tweet = ({ data }) => {
           <Video
             loop
             src={getSrc(data.video)}
-            // StartFrom={3600}
+            // trimBefore={1140}
+            muted
             className="rounded-3xl aspect-auto bg-black w-full border-[#eff3f4]"
-            volume={100}
           />
         </div>
       ) : (
