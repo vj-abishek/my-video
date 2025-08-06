@@ -18,21 +18,8 @@ export const RemotionRoot: React.FC = () => {
   const includeMusic = props.includeMusic !== undefined ? props.includeMusic : true;
   const videoOnly = props.videoOnly !== undefined ? props.videoOnly : false;
 
-  // Calculate duration from video data if available
-  const getVideoDuration = (data: any): number => {
-    if (data?.video && data.video.length > 0) {
-      // Try to get duration from the first video variant
-      const videoUrl = data.video[0]?.src;
-      if (videoUrl) {
-        // For now, use a default duration since we can't get it at runtime
-        // In a real implementation, you might want to pre-calculate this
-        return 9; // Default fallback
-      }
-    }
-    return renderTime;
-  };
-
-  const videoDuration = tweetData ? getVideoDuration(tweetData) : renderTime;
+  // Use renderTime for duration calculation
+  const videoDuration = renderTime;
 
 	return tweetData ? (
 		<>

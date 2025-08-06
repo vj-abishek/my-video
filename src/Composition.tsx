@@ -18,6 +18,61 @@ export const myCompSchema = z.object({
 	videoOnly: z.boolean().optional(),
 });
 
+// Blurred video background component
+const BlurredVideoBackground: React.FC<{ src: string }> = ({ src }) => {
+	return (
+		<AbsoluteFill
+			style={{
+				overflow: 'hidden',
+			}}
+		>
+			<Video 
+				style={{
+					objectFit: 'cover',
+					width: '100%',
+					height: '100%',
+					filter: 'blur(20px) brightness(30%)',
+					transform: 'scale(1.1)', // Slightly scale up to avoid blur edges
+				}} 
+				src={src} 
+			/>
+		</AbsoluteFill>
+	);
+};
+
+// Video component with proper fitting and blurred background
+const FittedVideoWithBlur: React.FC<{ src: string; isBackground?: boolean }> = ({ src, isBackground = false }) => {
+	return (
+		<AbsoluteFill>
+			{/* Blurred background video */}
+			<BlurredVideoBackground src={src} />
+			
+			{/* Main video with proper fitting */}
+			<AbsoluteFill
+				style={{
+					display: 'flex',
+					alignItems: 'center',
+					justifyContent: 'center',
+					overflow: 'hidden',
+				}}
+			>
+				<Video 
+					style={{
+						objectFit: 'contain',
+						maxWidth: '100%',
+						maxHeight: '100%',
+						width: 'auto',
+						height: 'auto',
+						borderRadius: isBackground ? '0px' : '20px',
+						filter: isBackground ? 'brightness(30%)' : 'none',
+					}} 
+					src={src} 
+				/>
+			</AbsoluteFill>
+		</AbsoluteFill>
+	);
+};
+
 // White noise component using SVG
 const WhiteNoise: React.FC = () => {
 	const frame = useCurrentFrame();
@@ -74,18 +129,11 @@ export const MyComposition: React.FC<z.infer<typeof myCompSchema>> = ({
 	// Get video URL from tweet data
 	const videoUrl = data.video ? getVideoSrc(data.video) : null;
 
-	// If video-only mode, render just the video in fullscreen
+	// If video-only mode, render just the video with blurred background
 	if (videoOnly && videoUrl) {
 		return (
 			<AbsoluteFill>
-				<Video 
-					style={{
-						objectFit: 'cover',
-						width: '100%',
-						height: '100%'
-					}} 
-					src={videoUrl} 
-				/>
+				<FittedVideoWithBlur src={videoUrl} />
 				{includeMusic && (
 					<Audio src={staticFile("audio.mp3")} volume={0.4} />
 				)}
@@ -98,25 +146,9 @@ export const MyComposition: React.FC<z.infer<typeof myCompSchema>> = ({
 		<AbsoluteFill className='bg-black' style={{ fontFamily }}>
 			<AbsoluteFill>
 				{videoUrl ? (
-					<Video 
-						style={{
-							filter: 'brightness(30%)',
-							objectFit: 'cover',
-							width: '100%',
-							height: '100%'
-						}} 
-						src={videoUrl} 
-					/>
+					<FittedVideoWithBlur src={videoUrl} isBackground={true} />
 				) : (
-					<Video 
-						style={{
-							filter: 'brightness(30%)',
-							objectFit: 'cover',
-							width: '100%',
-							height: '100%'
-						}} 
-						src={staticFile("video.mp4")} 
-					/>
+					<FittedVideoWithBlur src={staticFile("video.mp4")} isBackground={true} />
 				)}
 				{/* White noise overlay */}
 				<WhiteNoise />
