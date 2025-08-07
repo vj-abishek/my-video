@@ -75,7 +75,7 @@ EOF
     npx remotion render 'src/index.ts' YTShorts --props='./temp_props.json'
     
     # Clean up temporary file
-    rm temp_props.json
+    # rm temp_props.json
 else
     echo "Failed to fetch data"
     exit 1

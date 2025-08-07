@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  video-app:
+    build: .
+    ports:
+      - "8000:8000"  # Fresh app
+      - "7645:7645"  # Backend proxy
+    volumes:
+      - ./video-ui:/app/video-ui
+      - ./videos:/app/videos
+    environment:
+      - NODE_ENV=development
+    restart: unless-stopped
+
+  # Optional: Add a development service for easier debugging
+  dev:
+    build: .
+    ports:
+      - "8000:8000"
+      - "7645:7645"
+    volumes:
+      - .:/app
+    environment:
+      - NODE_ENV=development
+    command: ["/bin/bash", "-c", "cd /app/videos/backend && node index.js & cd /app/video-ui && deno task start"]
+    restart: unless-stopped 

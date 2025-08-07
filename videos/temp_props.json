@@ -1,0 +1,272 @@
+{
+  "renderTime": 9,
+  "includeMusic": true,
+  "videoOnly": false,
+  "tweet": {
+  "all": {
+    "__typename": "Tweet",
+    "lang": "en",
+    "favorite_count": 3906,
+    "possibly_sensitive": false,
+    "created_at": "2025-05-19T09:40:27.000Z",
+    "display_text_range": [
+      0,
+      270
+    ],
+    "entities": {
+      "hashtags": [],
+      "urls": [],
+      "user_mentions": [
+        {
+          "id_str": "24859015",
+          "indices": [
+            62,
+            73
+          ],
+          "name": "Robert Keus 👨🏼‍💻",
+          "screen_name": "robertkeus"
+        },
+        {
+          "id_str": "79957442",
+          "indices": [
+            88,
+            99
+          ],
+          "name": "Anton Osika – eu/acc",
+          "screen_name": "antonosika"
+        },
+        {
+          "id_str": "1233654149650108416",
+          "indices": [
+            100,
+            113
+          ],
+          "name": "Darky",
+          "screen_name": "LovableBuild"
+        }
+      ],
+      "symbols": [],
+      "media": [
+        {
+          "display_url": "pic.x.com/b5fvFwkMCP",
+          "expanded_url": "https://x.com/Thom_Wolf/status/1924399746447269963/video/1",
+          "indices": [
+            271,
+            294
+          ],
+          "url": "https://t.co/b5fvFwkMCP"
+        }
+      ]
+    },
+    "id_str": "1924399746447269963",
+    "text": "we've seen nothing yet! hosted a 9-13 yo vibe-coding event w. @robertkeus this w-e (h/t @antonosika @LovableBuild)\n\ntakeaway? AI is unleashing a generation of wildly creative builders beyond anything I'd have imagined\n\nand they grow up *knowing* they can build anything! https://t.co/b5fvFwkMCP",
+    "user": {
+      "id_str": "246939962",
+      "name": "Thomas Wolf",
+      "screen_name": "Thom_Wolf",
+      "is_blue_verified": true,
+      "profile_image_shape": "Circle",
+      "verified": false,
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/1629469939860946946/WUyBolSu_normal.jpg"
+    },
+    "edit_control": {
+      "initial_tweet_id": "1924395169018696133",
+      "edit_tweet_ids": [
+        "1924395169018696133",
+        "1924399746447269963"
+      ],
+      "editable_until_msecs": "1747650136000",
+      "is_edit_eligible": false,
+      "edits_remaining": "4"
+    },
+    "mediaDetails": [
+      {
+        "additional_media_info": {},
+        "display_url": "pic.x.com/b5fvFwkMCP",
+        "expanded_url": "https://x.com/Thom_Wolf/status/1924399746447269963/video/1",
+        "ext_media_availability": {
+          "status": "Available"
+        },
+        "indices": [
+          271,
+          294
+        ],
+        "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/1924392289452855296/img/9tDer7haUs4MmXdN.jpg",
+        "original_info": {
+          "height": 480,
+          "width": 848,
+          "focus_rects": []
+        },
+        "sizes": {
+          "large": {
+            "h": 480,
+            "resize": "fit",
+            "w": 848
+          },
+          "medium": {
+            "h": 480,
+            "resize": "fit",
+            "w": 848
+          },
+          "small": {
+            "h": 385,
+            "resize": "fit",
+            "w": 680
+          },
+          "thumb": {
+            "h": 150,
+            "resize": "crop",
+            "w": 150
+          }
+        },
+        "type": "video",
+        "url": "https://t.co/b5fvFwkMCP",
+        "video_info": {
+          "aspect_ratio": [
+            53,
+            30
+          ],
+          "duration_millis": 28815,
+          "variants": [
+            {
+              "content_type": "application/x-mpegURL",
+              "url": "https://video.twimg.com/amplify_video/1924392289452855296/pl/m_lSDWu8c0KZBG0U.m3u8?v=cfc"
+            },
+            {
+              "bitrate": 256000,
+              "content_type": "video/mp4",
+              "url": "https://video.twimg.com/amplify_video/1924392289452855296/vid/avc1/476x270/fxywnU-mHTUSrf9U.mp4"
+            },
+            {
+              "bitrate": 832000,
+              "content_type": "video/mp4",
+              "url": "https://video.twimg.com/amplify_video/1924392289452855296/vid/avc1/636x360/DuRhPCC37jjTfUVP.mp4"
+            },
+            {
+              "bitrate": 2176000,
+              "content_type": "video/mp4",
+              "url": "https://video.twimg.com/amplify_video/1924392289452855296/vid/avc1/848x480/HN0KBfzEeIQP1XWH.mp4"
+            }
+          ]
+        }
+      }
+    ],
+    "photos": [],
+    "video": {
+      "aspectRatio": [
+        53,
+        30
+      ],
+      "contentType": "media_entity",
+      "durationMs": 28815,
+      "mediaAvailability": {
+        "status": "available"
+      },
+      "poster": "https://pbs.twimg.com/amplify_video_thumb/1924392289452855296/img/9tDer7haUs4MmXdN.jpg",
+      "variants": [
+        {
+          "type": "application/x-mpegURL",
+          "src": "https://video.twimg.com/amplify_video/1924392289452855296/pl/m_lSDWu8c0KZBG0U.m3u8?v=cfc"
+        },
+        {
+          "type": "video/mp4",
+          "src": "https://video.twimg.com/amplify_video/1924392289452855296/vid/avc1/476x270/fxywnU-mHTUSrf9U.mp4"
+        },
+        {
+          "type": "video/mp4",
+          "src": "https://video.twimg.com/amplify_video/1924392289452855296/vid/avc1/636x360/DuRhPCC37jjTfUVP.mp4"
+        },
+        {
+          "type": "video/mp4",
+          "src": "https://video.twimg.com/amplify_video/1924392289452855296/vid/avc1/848x480/HN0KBfzEeIQP1XWH.mp4"
+        }
+      ],
+      "videoId": {
+        "type": "tweet",
+        "id": "1924399746447269963"
+      },
+      "viewCount": 0
+    },
+    "conversation_count": 194,
+    "news_action_type": "conversation",
+    "quoted_tweet": {
+      "lang": "en",
+      "reply_count": 136,
+      "retweet_count": 51,
+      "favorite_count": 1275,
+      "created_at": "2025-05-19T00:40:22.000Z",
+      "display_text_range": [
+        0,
+        109
+      ],
+      "entities": {
+        "hashtags": [],
+        "urls": [],
+        "user_mentions": [],
+        "symbols": []
+      },
+      "id_str": "1924263830537859156",
+      "text": "Every AI founder I see now is 17 years old\n\nI don't know what's happening\n\nGood to see they're shipping early",
+      "user": {
+        "id_str": "1577241403",
+        "name": "@levelsio",
+        "screen_name": "levelsio",
+        "is_blue_verified": true,
+        "profile_image_shape": "Circle",
+        "verified": false,
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/1589756412078555136/YlXMBzhp_normal.jpg"
+      },
+      "edit_control": {
+        "edit_tweet_ids": [
+          "1924263830537859156"
+        ],
+        "editable_until_msecs": "1747618822000",
+        "is_edit_eligible": true,
+        "edits_remaining": "5"
+      },
+      "isEdited": false,
+      "isStaleEdit": false
+    },
+    "isEdited": true,
+    "isStaleEdit": false,
+    "previous_counts": {
+      "favorite_count": 13,
+      "quote_count": 0,
+      "reply_count": 1,
+      "retweet_count": 0
+    }
+  },
+  "text": "we've seen nothing yet! hosted a 9-13 yo vibe-coding event w. <span style=\"color: #2DA0F1\">@robertkeus</span> this w-e (h/t <span style=\"color: #2DA0F1\">@antonosika</span> <span style=\"color: #2DA0F1\">@LovableBuild</span>)<br/><br/>takeaway? AI is unleashing a generation of wildly creative builders beyond anything I'd have imagined<br/><br/>and they grow up *knowing* they can build anything!",
+  "likes": 3906,
+  "replies": 194,
+  "createdAt": "9:40 AM · 19 May 2025",
+  "avatar": "https://pbs.twimg.com/profile_images/1629469939860946946/WUyBolSu_400x400.jpg",
+  "name": "Thomas Wolf",
+  "username": "Thom_Wolf",
+  "verified": false,
+  "isBlueVerified": true,
+  "verifiedType": "blue",
+  "images": [
+    "https://pbs.twimg.com/amplify_video_thumb/1924392289452855296/img/9tDer7haUs4MmXdN.jpg"
+  ],
+  "video": [
+    {
+      "type": "application/x-mpegURL",
+      "src": "https://video.twimg.com/amplify_video/1924392289452855296/pl/m_lSDWu8c0KZBG0U.m3u8?v=cfc"
+    },
+    {
+      "type": "video/mp4",
+      "src": "https://video.twimg.com/amplify_video/1924392289452855296/vid/avc1/476x270/fxywnU-mHTUSrf9U.mp4"
+    },
+    {
+      "type": "video/mp4",
+      "src": "https://video.twimg.com/amplify_video/1924392289452855296/vid/avc1/636x360/DuRhPCC37jjTfUVP.mp4"
+    },
+    {
+      "type": "video/mp4",
+      "src": "https://video.twimg.com/amplify_video/1924392289452855296/vid/avc1/848x480/HN0KBfzEeIQP1XWH.mp4"
+    }
+  ],
+  "cardPreview": null
+}
+}
