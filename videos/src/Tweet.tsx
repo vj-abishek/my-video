@@ -1,7 +1,11 @@
 /* eslint-disable react/no-danger */
-import { Img, Video, interpolate, random, useCurrentFrame } from "remotion"
+import { Img, OffthreadVideo, interpolate, random, useCurrentFrame } from "remotion"
 
-export const Tweet = ({ data }) => {
+interface TweetProps {
+  data: any;
+}
+
+export const Tweet: React.FC<TweetProps> = ({ data }) => {
   const frame = useCurrentFrame();
   const opacity = interpolate(frame, [10, 15], [0, 1], {
     extrapolateLeft: 'clamp',
@@ -44,10 +48,8 @@ export const Tweet = ({ data }) => {
 
       {data.video ? (
         <div className="mt-12">
-          <Video
-            loop
+          <OffthreadVideo
             src={getSrc(data.video)}
-            // trimBefore={1140}
             muted
             className="rounded-3xl aspect-auto bg-black w-full border-[#eff3f4]"
           />
