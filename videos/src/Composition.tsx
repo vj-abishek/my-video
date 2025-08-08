@@ -1,4 +1,4 @@
-import {AbsoluteFill, Video, interpolate, staticFile, useCurrentFrame, Audio, useVideoConfig} from 'remotion';
+import {AbsoluteFill, OffthreadVideo, interpolate, staticFile, useCurrentFrame, Audio, useVideoConfig} from 'remotion';
 import {Tweet} from './Tweet'
 import {z} from 'zod';
 import { loadFont } from "@remotion/google-fonts/Roboto";
@@ -26,7 +26,7 @@ const BlurredVideoBackground: React.FC<{ src: string }> = ({ src }) => {
 				overflow: 'hidden',
 			}}
 		>
-			<Video 
+			<OffthreadVideo 
 				style={{
 					objectFit: 'cover',
 					width: '100%',
@@ -56,7 +56,7 @@ const FittedVideoWithBlur: React.FC<{ src: string; isBackground?: boolean }> = (
 					overflow: 'hidden',
 				}}
 			>
-				<Video 
+				<OffthreadVideo 
 					style={{
 						objectFit: 'contain',
 						maxWidth: '100%',

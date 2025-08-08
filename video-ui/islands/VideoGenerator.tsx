@@ -152,18 +152,12 @@ export default function VideoGenerator() {
   }, [tweetId.value, duration.value, outputType.value, includeAudio.value]);
 
   return (
-    <div class={`${isFullScreen.value ? 'fixed inset-0 z-50' : 'min-h-screen'} bg-gradient-to-br from-slate-900 via-purple-900 via-blue-900 to-slate-900 flex items-center justify-center ${isFullScreen.value ? 'p-0' : 'p-2 sm:p-4'} relative overflow-hidden`}>
-      {/* Animated gradient overlay */}
-      <div class="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10 animate-pulse"></div>
-      {/* Floating orbs */}
-      <div class="absolute top-20 left-20 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl animate-bounce"></div>
-      <div class="absolute bottom-20 right-20 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse"></div>
-      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-spin"></div>
+    <div class={`${isFullScreen.value ? 'fixed inset-0 z-50' : 'min-h-screen'} bg-neutral-950 flex items-center justify-center ${isFullScreen.value ? 'p-0' : 'p-2 sm:p-4'} relative overflow-hidden`}>
       
       {/* Full Screen Toggle Button */}
       <button
         onClick={toggleFullScreen}
-        class="absolute top-4 right-4 z-20 bg-gray-800/80 hover:bg-gray-700/80 text-white rounded-lg p-2 transition-all duration-200 hover:scale-110 backdrop-blur-sm"
+        class="absolute top-4 right-4 z-20 bg-neutral-900/80 hover:bg-neutral-800/80 text-white rounded-xl p-2 transition-all duration-200 hover:scale-110 backdrop-blur-sm border border-neutral-800/70"
         title={isFullScreen.value ? "Exit Full Screen" : "Enter Full Screen"}
       >
         {isFullScreen.value ? (
@@ -178,7 +172,7 @@ export default function VideoGenerator() {
       </button>
 
       <div class={`w-full ${isFullScreen.value ? 'h-full max-w-none' : 'max-w-4xl'} relative z-10`}>
-        <div class={`bg-gray-800/90 backdrop-blur-sm rounded-2xl shadow-2xl border border-gray-700/50 ${isFullScreen.value ? 'h-full m-0 rounded-none' : 'p-4 sm:p-6 lg:p-8'}`}>
+        <div class={`bg-neutral-900/80 backdrop-blur-sm rounded-3xl shadow-2xl border border-neutral-800/60 ${isFullScreen.value ? 'h-full m-0 rounded-none' : 'p-4 sm:p-6 lg:p-8'}`}>
           {/* Header - Only show when not in logs mode */}
           {!isGenerating.value && logs.value.length === 0 && (
             <div class="text-center mb-4 sm:mb-6 lg:mb-8">
@@ -189,8 +183,8 @@ export default function VideoGenerator() {
 
           {/* Form - Hidden when logs are present */}
           {!isGenerating.value && logs.value.length === 0 && (
-            <>
-            <form onSubmit={handleSubmit} class="space-y-4 sm:space-y-6">
+            <div>
+            <form onSubmit={(e) => { e.preventDefault(); handleSubmit(); }} class="space-y-4 sm:space-y-6">
             {/* Tweet ID Input */}
             <div>
               <label for="tweetId" class="block text-sm font-medium text-gray-300 mb-2">
@@ -201,7 +195,7 @@ export default function VideoGenerator() {
                 id="tweetId"
                 value={tweetId.value}
                 onInput={(e) => tweetId.value = (e.target as HTMLInputElement).value}
-                class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-gray-700 text-white placeholder-gray-400 hover:bg-gray-600 text-sm sm:text-base"
+                class="w-full px-4 sm:px-5 py-3 sm:py-3.5 border border-neutral-700 rounded-2xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-200 bg-neutral-800 text-white placeholder-neutral-400 hover:bg-neutral-700 text-sm sm:text-base"
                 placeholder="Enter tweet ID..."
                 required
               />
@@ -217,7 +211,7 @@ export default function VideoGenerator() {
                 id="duration"
                 value={duration.value}
                 onInput={(e) => duration.value = parseInt((e.target as HTMLInputElement).value)}
-                class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-gray-700 text-white hover:bg-gray-600 text-sm sm:text-base"
+                class="w-full px-4 sm:px-5 py-3 sm:py-3.5 border border-neutral-700 rounded-2xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-200 bg-neutral-800 text-white hover:bg-neutral-700 text-sm sm:text-base"
                 min="1"
                 max="60"
                 required
@@ -233,7 +227,7 @@ export default function VideoGenerator() {
                 id="outputType"
                 value={outputType.value}
                 onChange={(e) => outputType.value = (e.target as HTMLSelectElement).value}
-                class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-gray-700 text-white hover:bg-gray-600 text-sm sm:text-base"
+                class="w-full px-4 sm:px-5 py-3 sm:py-3.5 border border-neutral-700 rounded-2xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-200 bg-neutral-800 text-white hover:bg-neutral-700 text-sm sm:text-base"
               >
                 <option value="tweet">Tweet</option>
                 <option value="video">Video</option>
@@ -264,10 +258,10 @@ export default function VideoGenerator() {
             <button
               type="submit"
               disabled={isGenerating.value}
-              class={`w-full font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg transform transition-all duration-200 shadow-lg text-sm sm:text-base ${
+              class={`w-full font-semibold py-3 sm:py-3.5 px-5 sm:px-6 rounded-2xl transform transition-all duration-200 shadow-lg text-sm sm:text-base ${
                 isGenerating.value
-                  ? 'bg-gray-600 text-gray-400 cursor-not-allowed'
-                  : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 hover:scale-105 hover:shadow-xl'
+                  ? 'bg-neutral-700 text-neutral-400 cursor-not-allowed'
+                  : 'bg-cyan-600 text-white hover:bg-cyan-700 hover:scale-105 hover:shadow-xl'
               }`}
             >
               {isGenerating.value ? 'Generating...' : 'Generate Video'}
@@ -292,14 +286,14 @@ export default function VideoGenerator() {
             </div>
             
             {showVideoList.value && (
-              <div class="bg-gray-900/80 rounded-lg p-4">
+              <div class="bg-neutral-900/70 rounded-2xl p-4 border border-neutral-800/60">
                 {availableVideos.value.length === 0 ? (
-                  <p class="text-gray-400 text-center">No videos found</p>
+                  <p class="text-neutral-400 text-center">No videos found</p>
                 ) : (
                   <div class="space-y-2">
                     {availableVideos.value.map((filename) => (
-                      <div key={filename} class="flex justify-between items-center p-3 bg-gray-800/50 rounded-lg">
-                        <span class="text-gray-300 font-mono text-sm">{filename}</span>
+                      <div key={filename} class="flex justify-between items-center p-3 bg-neutral-800/60 rounded-xl">
+                        <span class="text-neutral-300 font-mono text-sm">{filename}</span>
                         <button
                           onClick={() => {
                             const downloadUrl = `/api/download-video?filename=${encodeURIComponent(filename)}`;
@@ -310,7 +304,7 @@ export default function VideoGenerator() {
                             link.click();
                             document.body.removeChild(link);
                           }}
-                          class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm font-medium transition-all duration-200 hover:scale-105"
+                          class="bg-cyan-600 hover:bg-cyan-700 text-white px-3 py-1 rounded-xl text-sm font-medium transition-all duration-200 hover:scale-105"
                         >
                           📥 Download
                         </button>
@@ -321,7 +315,7 @@ export default function VideoGenerator() {
               </div>
             )}
           </div>
-          </>
+          </div>
           )}
 
           {/* Logs Section - Zen Mode */}
@@ -333,10 +327,10 @@ export default function VideoGenerator() {
                 <button
                   onClick={clearLogs}
                   disabled={isGenerating.value}
-                  class={`px-3 sm:px-4 py-2 rounded-lg font-medium transition-all duration-200 text-sm sm:text-base ${
+                  class={`px-3 sm:px-4 py-2 rounded-xl font-medium transition-all duration-200 text-sm sm:text-base ${
                     isGenerating.value
-                      ? 'bg-gray-600 text-gray-400 cursor-not-allowed'
-                      : 'bg-blue-600 hover:bg-blue-700 text-white hover:scale-105'
+                      ? 'bg-neutral-700 text-neutral-400 cursor-not-allowed'
+                      : 'bg-neutral-800 hover:bg-neutral-700 text-white hover:scale-105 border border-neutral-700'
                   }`}
                 >
                   Back to Form
@@ -347,7 +341,7 @@ export default function VideoGenerator() {
                 <div 
                   ref={logsContainerRef}
                   onScroll={handleScroll}
-                  class={`bg-gray-900/80 rounded-lg p-3 sm:p-4 lg:p-6 overflow-y-auto ${isFullScreen.value ? 'h-[calc(100vh-120px)]' : 'max-h-96'}`}
+                  class={`bg-neutral-900/70 rounded-2xl p-3 sm:p-4 lg:p-6 overflow-y-auto border border-neutral-800/60 ${isFullScreen.value ? 'h-[calc(100vh-120px)]' : 'max-h-96'}`}
                 >
                   {logs.value.length === 0 ? (
                     <div class="text-gray-400 text-center py-4">
@@ -357,7 +351,7 @@ export default function VideoGenerator() {
                   ) : (
                     <div class="space-y-2">
                       {logs.value.map((log, index) => (
-                        <div key={index} class="text-xs sm:text-sm font-mono text-gray-300 leading-relaxed">
+                        <div key={index} class="text-xs sm:text-sm font-mono text-neutral-300 leading-relaxed">
                           {log}
                         </div>
                       ))}
@@ -385,7 +379,7 @@ export default function VideoGenerator() {
                               link.click();
                               document.body.removeChild(link);
                             }}
-                            class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-all duration-200 hover:scale-105"
+                            class="bg-cyan-600 hover:bg-cyan-700 text-white px-4 py-2 rounded-xl font-medium transition-all duration-200 hover:scale-105"
                           >
                             📥 Download Video
                           </button>
@@ -399,7 +393,7 @@ export default function VideoGenerator() {
                 {!shouldAutoScroll.value && logs.value.length > 0 && (
                   <button
                     onClick={scrollToBottom}
-                    class="absolute bottom-4 right-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full p-2 shadow-lg transition-all duration-200 hover:scale-110"
+                    class="absolute bottom-4 right-4 bg-cyan-600 hover:bg-cyan-700 text-white rounded-full p-2 shadow-lg transition-all duration-200 hover:scale-110"
                     title="Scroll to bottom"
                   >
                     <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
